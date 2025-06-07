@@ -28,6 +28,8 @@ Install Python 3.10:
 sudo apt update
 sudo apt install python3.10 python3.10-dev
 ```
+### Output:
+![Alt text](riscv/1.png)
 
 ---
 
