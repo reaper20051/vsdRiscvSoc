@@ -199,7 +199,10 @@ SECTIONS {
   .data 0x10000000 : { *(.data*) }
 }
 ```
-
+### Output:
+![Alt text](riscv/16.jpg)
+![Alt text](riscv/17.jpg)
+![Alt text](riscv/18.jpg)
 ---
 
 ## 12. crt0.S Responsibilities
@@ -210,15 +213,20 @@ SECTIONS {
 - Infinite loop after return
 
 ---
+### Output:
+![Alt text](riscv/19.jpg)
+![Alt text](riscv/20.jpg)
+---
 
 ## 13. Timer Interrupts
 
 - Set `mtimecmp`
 - Enable `mie` and `mstatus`
 - Define handler using `__attribute__((interrupt))`
-
 ---
-
+### Output:
+![Alt text](riscv/21.jpg)
+---
 ## 14. Atomic Instructions (`A` Extension)
 
 Instructions:
@@ -241,7 +249,9 @@ while (1) {
   );
 }
 ```
-
+### Output:
+![Alt text](riscv/22.jpg)
+![Alt text](riscv/23.jpg)
 ---
 
 ## 16. Using printf with Newlib (Bare-Metal)
@@ -275,7 +285,8 @@ printf("%02x %02x %02x %02x\n", u.b[0], u.b[1], u.b[2], u.b[3]);
 ```
 
 Little-endian will print: `04 03 02 01`
+### Output:
+![Alt text](riscv/24.jpg)
+![Alt text](riscv/25.jpg)
 
 ---
-
-> 📘 **Credits**: Extracted from AI-assisted RISC-V learning workflow with hands-on examples and common troubleshooting.
