@@ -88,11 +88,15 @@ main:
 ```bash
 riscv32-unknown-elf-objdump -d hello.elf > hello.dump
 ```
+### Output:
+![Alt text](riscv/4.jpg)
 
 ### Intel HEX
 ```bash
 riscv32-unknown-elf-objcopy -O ihex hello.elf hello.hex
 ```
+### Output:
+![Alt text](riscv/5.jpg)
 
 ### Analyze
 ```
@@ -124,6 +128,9 @@ riscv32-unknown-elf-gdb hello.elf
 (gdb) stepi
 (gdb) info registers
 ```
+### Output:
+![Alt text](riscv/5.jpg)
+![Alt text](riscv/6.jpg)
 
 ---
 
@@ -138,7 +145,9 @@ or
 ```bash
 qemu-system-riscv32 -nographic -kernel hello.elf
 ```
-
+### Output:
+![Alt text](riscv/7.jpg)
+![Alt text](riscv/8.jpg)
 ---
 
 ## 8. GCC Optimization
@@ -150,6 +159,10 @@ riscv32-unknown-elf-gcc -S -O2 hello.c
 ```
 
 Observe: dead-code elimination, inlining, etc.
+### Output:
+![Alt text](riscv/9.jpg)
+![Alt text](riscv/10.jpg)
+![Alt text](riscv/11.jpg)
 
 ---
 
@@ -162,6 +175,8 @@ static inline uint32_t rdcycle(void) {
   return c;
 }
 ```
+### Output:
+![Alt text](riscv/12.jpg)
 
 ---
 
