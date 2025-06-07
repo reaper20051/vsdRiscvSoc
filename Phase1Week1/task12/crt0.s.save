@@ -1,0 +1,40 @@
+    .global _start
+    .extern main
+
+    .section .text
+_start:
+    # Set up stack pointer (this is just an example; adjust for your RAM layout)
+    la   sp, _stack_top        # Load stack pointer to the top of the stack
+    
+    # Zero out the .bss section (uninitialized globals and statics)
+    la   a0, __bss_start       # Load the address of the .bss start
+    la   a1, __bss_end         # Load the address of the .bss end
+    call zero_bss              # Call a helper to zero the .bss section
+
+    # Call main() function
+    call main
+
+    # If main returns, enter an infinite loop (halt the program)
+halt:
+    j halt                     # Jump to halt (infinite loop)
+
+# Function to zero out the .bss section
+zero_bss:
+    beq  a0, a1, zero_done     # If start == end, we're done
+zero_loop:
+    sw   x0, 0(a0)             # Store zero at address in a0
+    addi a0, a0, 4             # Move to the next word (4 bytes)
+    bne  a0, a1, zero_loop     # Continue until a0 == a1
+zero_done:
+    ret                        # Return from zero_bss function
+
+    .section .data
+__bss_start:
+    .skip 0x1000               # Example space for .bss section (adjust size)
+__bss_end:
+    .skip 0                    # End marker of .bss section
+
+    .section .text
+    .global _stack_top
+_stack_top:
+    .skip 0x1000               # Reserve space for stack (adjust as needed)
