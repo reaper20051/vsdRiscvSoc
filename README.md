@@ -146,8 +146,8 @@ or
 qemu-system-riscv32 -nographic -kernel hello.elf
 ```
 ### Output:
-![Alt text](riscv/7.jpg)
 ![Alt text](riscv/8.jpg)
+![Alt text](riscv/9.jpg)
 ---
 
 ## 8. GCC Optimization
@@ -160,9 +160,9 @@ riscv32-unknown-elf-gcc -S -O2 hello.c
 
 Observe: dead-code elimination, inlining, etc.
 ### Output:
-![Alt text](riscv/8.jpg)
-![Alt text](riscv/9.jpg)
 ![Alt text](riscv/10.jpg)
+![Alt text](riscv/11.jpg)
+![Alt text](riscv/12.jpg)
 
 ---
 
@@ -176,7 +176,7 @@ static inline uint32_t rdcycle(void) {
 }
 ```
 ### Output:
-![Alt text](riscv/11.jpg)
+![Alt text](riscv/13.jpg)
 
 ---
 
@@ -187,8 +187,8 @@ volatile uint32_t *gpio = (uint32_t*)0x10012000;
 *gpio = 0x1;
 ```
 ### Output:
-![Alt text](riscv/12.jpg)
-![Alt text](riscv/13.jpg)
+![Alt text](riscv/14.jpg)
+![Alt text](riscv/15.jpg)
 ---
 
 ## 11. Minimal Linker Script
