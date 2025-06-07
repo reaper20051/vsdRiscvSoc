@@ -54,7 +54,8 @@ riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -o hello.elf hello.c
 ```bash
 file hello.elf
 ```
-
+### Output:
+![Alt text](riscv/2.jpg)
 ---
 
 ## 3. From C to Assembly
@@ -76,6 +77,8 @@ main:
   addi sp, sp, 16
   ret
 ```
+### Output:
+![Alt text](riscv/3.jpg)
 
 ---
 
