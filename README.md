@@ -129,8 +129,8 @@ riscv32-unknown-elf-gdb hello.elf
 (gdb) info registers
 ```
 ### Output:
-![Alt text](riscv/5.jpg)
 ![Alt text](riscv/6.jpg)
+![Alt text](riscv/7.jpg)
 
 ---
 
@@ -160,9 +160,9 @@ riscv32-unknown-elf-gcc -S -O2 hello.c
 
 Observe: dead-code elimination, inlining, etc.
 ### Output:
+![Alt text](riscv/8.jpg)
 ![Alt text](riscv/9.jpg)
 ![Alt text](riscv/10.jpg)
-![Alt text](riscv/11.jpg)
 
 ---
 
@@ -176,7 +176,7 @@ static inline uint32_t rdcycle(void) {
 }
 ```
 ### Output:
-![Alt text](riscv/12.jpg)
+![Alt text](riscv/11.jpg)
 
 ---
 
@@ -186,7 +186,9 @@ static inline uint32_t rdcycle(void) {
 volatile uint32_t *gpio = (uint32_t*)0x10012000;
 *gpio = 0x1;
 ```
-
+### Output:
+![Alt text](riscv/12.jpg)
+![Alt text](riscv/13.jpg)
 ---
 
 ## 11. Minimal Linker Script
